@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Разложение вектора по двум неколлинеарным векторам</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>📐 Разложение вектора по двум неколлинеарным векторам</h1>
+    <div class="progress-bar"><div id="progress" class="progress-fill"></div></div>
+    <p id="progress-text">Прогресс: 0%</p>
+  </header>
+
+  <main>
+    <!-- ЭТАП 1: Цель и задачи -->
+    <section class="step active" data-step="1">
+      <h2>🎯 Цель урока</h2>
+      <p>Создать условия для успешного освоения приемов и способов разложения вектора по двум неколлинеарным векторам.</p>
+      <h3>Задачи:</h3>
+      <ul>
+        <li>Вывести формулы разложения вектора по двум неколлинеарным векторам.</li>
+        <li>Научиться раскладывать вектор по двум неколлинеарным векторам.</li>
+        <li>Закрепить навыки разложения вектора.</li>
+        <li>Развивать умение грамотно излагать мысли, коммуникативные навыки.</li>
+      </ul>
+      <button class="next-btn">Начать урок →</button>
+    </section>
+
+    <!-- ЭТАП 2: Повторение теории (вопросы) -->
+    <section class="step" data-step="2">
+      <h2>🔁 Повторение теории</h2>
+      <p>Ответьте на вопросы (выберите правильный вариант):</p>
+
+      <div class="quiz-block" id="theory-quiz">
+        <div class="question" data-q="1">
+          <p>1. Что такое вектор?</p>
+          <label><input type="radio" name="q1" value="a"> Отрезок, у которого указаны начало и конец</label>
+          <label><input type="radio" name="q1" value="b"> Любая прямая</label>
+          <label><input type="radio" name="q1" value="c"> Точка на плоскости</label>
+        </div>
+        <div class="question" data-q="2">
+          <p>2. Как иначе называют длину вектора?</p>
+          <label><input type="radio" name="q2" value="a"> Направление</label>
+          <label><input type="radio" name="q2" value="b"> Модуль</label>
+          <label><input type="radio" name="q2" value="c"> Проекция</label>
+        </div>
+        <div class="question" data-q="3">
+          <p>3. Какие векторы называются коллинеарными?</p>
+          <label><input type="radio" name="q3" value="a"> Лежащие на параллельных прямых или на одной прямой</label>
+          <label><input type="radio" name="q3" value="b"> Имеющие одинаковую длину</label>
+          <label><input type="radio" name="q3" value="c"> Перпендикулярные друг другу</label>
+        </div>
+        <div class="question" data-q="4">
+          <p>4. Какие векторы называются равными?</p>
+          <label><input type="radio" name="q4" value="a"> Сонаправленные и равные по модулю</label>
+          <label><input type="radio" name="q4" value="b"> Противоположно направленные</label>
+          <label><input type="radio" name="q4" value="c"> Любые векторы с одинаковыми координатами начала</label>
+        </div>
+      </div>
+      <button class="check-theory-btn">Проверить</button>
+      <div id="theory-result"></div>
+      <button class="next-btn">Далее →</button>
+    </section>
+
+    <!-- ЭТАП 3: Интерактив — правило параллелограмма -->
+    <section class="step" data-step="3">
+      <h2>🧩 Интерактив: сложение по правилу параллелограмма</h2>
+      <p>Потяните ползунки коэффициентов <b>k</b> и <b>m</b>, чтобы увидеть, как вектор <b>p = k·a + m·b</b> раскладывается по векторам <b>a</b> и <b>b</b>.</p>
+
+      <div class="interactive-box">
+        <canvas id="vectorCanvas" width="600" height="400"></canvas>
+        <div class="controls">
+          <label>k (для a): <input type="range" id="kSlider" min="-3" max="3" step="0.5" value="1"></label>
+          <span id="kVal">1</span>
+          <label>m (для b): <input type="range" id="mSlider" min="-3" max="3" step="0.5" value="1"></label>
+          <span id="mVal">1</span>
+        </div>
+        <p class="formula" id="formulaDisplay">p = 1·a + 1·b</p>
+      </div>
+      <button class="next-btn">Далее →</button>
+    </section>
+
+    <!-- ЭТАП 4: Алгоритм разложения -->
+    <section class="step" data-step="4">
+      <h2>📝 Алгоритм разложения вектора</h2>
+      <ol>
+        <li>Отложить все три вектора от одной точки.</li>
+        <li>Достроить до параллелограмма (или треугольника).</li>
+        <li>Вычислить значения коэффициентов k и m для каждого вектора.</li>
+        <li>Записать разложение: <b>p = k·a + m·b</b>.</li>
+      </ol>
+      <div class="example-box">
+        <h3>Пример с презентации:</h3>
+        <p><b>p = 3·a + 0,5·b</b> (вектор p — диагональ параллелограмма)</p>
+        <p><b>p = -4·a + 1,5·b</b> (отрицательный коэффициент меняет направление)</p>
+      </div>
+      <button class="next-btn">Перейти к тесту →</button>
+    </section>
+
+    <!-- ЭТАП 5: Итоговый тест -->
+    <section class="step" data-step="5">
+      <h2>✅ Итоговый тест</h2>
+      <p>Ответьте на вопросы. Результат будет сохранён в Excel.</p>
+
+      <form id="finalTest">
+        <div class="question">
+          <p>1. Векторы a и b неколлинеарны. Что означает запись p = 2a − 3b?</p>
+          <label><input type="radio" name="f1" value="a"> Вектор p разложен по a и b</label>
+          <label><input type="radio" name="f1" value="b"> a и b коллинеарны</label>
+          <label><input type="radio" name="f1" value="c"> p = 0</label>
+        </div>
+        <div class="question">
+          <p>2. Если b = k·a и k < 0, то векторы a и b:</p>
+          <label><input type="radio" name="f2" value="a"> Сонаправлены</label>
+          <label><input type="radio" name="f2" value="b"> Противоположно направлены</label>
+          <label><input type="radio" name="f2" value="c"> Перпендикулярны</label>
+        </div>
+        <div class="question">
+          <p>3. В разложении p = 3a + 0,5b коэффициенты равны:</p>
+          <label><input type="radio" name="f3" value="a"> 3 и 0,5</label>
+          <label><input type="radio" name="f3" value="b"> 0,5 и 3</label>
+          <label><input type="radio" name="f3" value="c"> 3 и 0</label>
+        </div>
+        <div class="question">
+          <p>4. Какое условие необходимо для разложения вектора по двум векторам?</p>
+          <label><input type="radio" name="f4" value="a"> Векторы должны быть коллинеарны</label>
+          <label><input type="radio" name="f4" value="b"> Векторы должны быть неколлинеарны</label>
+          <label><input type="radio" name="f4" value="c"> Векторы должны быть равны</label>
+        </div>
+        <div class="question">
+          <p>5. Если в разложении p = k·a + m·b коэффициент k = 0, то:</p>
+          <label><input type="radio" name="f5" value="a"> p = m·b</label>
+          <label><input type="radio" name="f5" value="b"> p = k·a</label>
+          <label><input type="radio" name="f5" value="c"> p = 0</label>
+        </div>
+
+        <div class="user-info">
+          <label>Ваше имя: <input type="text" id="studentName" required></label>
+          <label>Класс: <input type="text" id="studentClass" required></label>
+        </div>
+
+        <button type="submit" class="submit-btn">Отправить результаты</button>
+      </form>
+
+      <div id="finalResult"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
